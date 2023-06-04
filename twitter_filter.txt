@@ -1,0 +1,44 @@
+! Title: Japanese Twitter Clean Filter
+! Description: 日本語のTwitterウェブをクリーンに保ちます
+! Expires: 7 days
+! Last modified: %timestamp%
+! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/master/LICENSE
+! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
+! Forums: https://ganohr.net/japanese-twitter-clean-filter/
+! Author: ガノー（ganohr）
+
+! Twitterからbnc.ltへのリンクを含む全ての投稿を削除する
+twitter.com#?#div[data-testid="cellInnerDiv"]:has(a:contains(bnc.lt))
+
+! Twitterのおすすめユーザーを削除する
+!! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div+div a[href^="/i/connect_people?user_id="])
+!! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="])
+!! div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="])
+!! div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="])
+!! div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="])
+!! div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="])
+!! div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
+
+twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
+
+! Twitterからトレンドやスペース他、迷惑要素を削除する
+!! div[aria-label="タイムライン: トレンド"]
+!! div[aria-label="タイムライン: トレンド"] *
+!! a[aria-label*="調べたいものを検索"]
+!! a[aria-label*="調べたいものを検索"] *
+!! aside[aria-label="関連性の高いアカウント"]
+!! div[aria-label="タイムライン: "]
+!! div[aria-label="タイムライン: "] *
+!! div[aria-label*="新しいツイートがあります。"] *
+!! .css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x
+!! .css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x
+!! div[aria-live="polite"]
+!! div[aria-label$="の未読項目"]
+
+twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,a[aria-label*="調べたいものを検索"],a[aria-label*="調べたいものを検索"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"]
+
+! Twitterのもっと見つけるを削除する
+!! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*
+!! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
+
+twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))+*,div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
