@@ -1,0 +1,2 @@
+# Japanese-Twitter-Clean-Filter
+AdGaurd用のフィルタで手軽にTwitterウェブをクリーンにします
