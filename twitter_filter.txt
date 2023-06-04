@@ -2,7 +2,7 @@
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 7 days
 ! Last modified: %timestamp%
-! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/master/LICENSE
+! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://ganohr.net/japanese-twitter-clean-filter/
 ! Author: ガノー（ganohr）
