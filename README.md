@@ -3,9 +3,10 @@ AdGaurd用のフィルタで手軽にTwitterウェブをクリーンにします
 
 # インストール
 カスタムフィルタとして、以下のURLを購読してください。
+
 https://raw.githubusercontent.com/ganohr/Japanese-Twitter-Clean-Filter/main/twitter_filter.txt
 
-「信頼できる」にはチェック不要ですが、将来的に必要になる場合があります。
+AdGuardでカスタムフィルタを購読する際に、「信頼できる」にはチェック不要ですが、将来的に必要になる場合があります。
 
 # このフィルタの目的
 PC上のTwitterに表示される、不必要な要素を削除しクリーンに保ちます。
