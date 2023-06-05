@@ -11,7 +11,6 @@
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(a:contains(bnc.lt))
 
 ! Twitterのおすすめユーザーを削除する
-!! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="])
@@ -19,7 +18,7 @@ twitter.com#?#div[data-testid="cellInnerDiv"]:has(a:contains(bnc.lt))
 !! div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
 
-twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
+twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
 
 ! Twitterからトレンドやスペース他、迷惑要素を削除する
 !! div[aria-label="タイムライン: トレンド"]
