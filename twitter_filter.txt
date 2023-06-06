@@ -13,9 +13,9 @@
 !!! twitter.com#?#div[data-testid="cellInnerDiv"]:has(a:contains(bnc.lt))
 !!! twitter.com#?#div[data-testid="cellInnerDiv"]:has(a:contains(jp.anime0128.com))
 
-twitter.com#?#:xpath(div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt")]/ancestor::div[@data-testid="cellInnerDiv"])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt")]/ancestor::div[@data-testid="cellInnerDiv"])
 
-twitter.com#?#:xpath(div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "jp.anime0128.com")]/ancestor::div[@data-testid="cellInnerDiv"])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "jp.anime0128.com")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのおすすめユーザーを削除する
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="])
