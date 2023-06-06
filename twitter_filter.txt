@@ -48,3 +48,4 @@ twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label=
 !! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
 
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*,div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
+
