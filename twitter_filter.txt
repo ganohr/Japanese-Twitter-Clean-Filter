@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 7 days
-! Last modified: 2023/06/06 19:09:00
+! Last modified: 2023/06/06 19:15:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://ganohr.net/japanese-twitter-clean-filter/
