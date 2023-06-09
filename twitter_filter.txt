@@ -17,7 +17,6 @@
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのおすすめユーザーを削除する
-!! div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])+div
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="])
@@ -25,7 +24,7 @@ twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="ca
 !! div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="])
 !! div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
 
-twitter.com#?#div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])+div,div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
+twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
 
 ! Twitterからトレンドやスペース他、迷惑要素を削除する
 !! div[aria-label="タイムライン: トレンド"]
@@ -48,3 +47,6 @@ twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label=
 !! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
 
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*,div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
+
+! Twitterの広告を削除(AdGuardがDivの残骸を消し忘れるので一応)
+twitter.com#?#:xpath(//div[@data-testid="placementTracking"]/ancestor::div[@data-testid="cellInnerDiv"])
