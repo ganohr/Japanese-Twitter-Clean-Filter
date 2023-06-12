@@ -50,7 +50,7 @@ twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label=
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*,div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
 
 ! Twitterのその他のツイートを削除する
-twitter.com#?#xpath(//div[@data-testid="cellInnerDiv"]//h2[@role="heading"]//span[contains(text(),"その他のツイート")]/ancestor::div[@data-testid="cellInnerDiv"]/following-sibling::*)
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//h2[@role="heading"]//span[contains(text(),"その他のツイート")]/ancestor::div[@data-testid="cellInnerDiv"]/following-sibling::*)
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(その他のツイート))
 
 ! Twitterの広告を削除(AdGuardがDivの残骸を消し忘れるので一応)
