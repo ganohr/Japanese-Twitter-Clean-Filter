@@ -29,8 +29,8 @@ twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="
 ! Twitterからトレンドやスペース他、迷惑要素を削除する
 !! div[aria-label="タイムライン: トレンド"]
 !! div[aria-label="タイムライン: トレンド"] *
-!! a[aria-label*="調べたいものを検索"]
-!! a[aria-label*="調べたいものを検索"] *
+!!! a[aria-label*="調べたいものを検索"]
+!!! a[aria-label*="調べたいものを検索"] *
 !! aside[aria-label="関連性の高いアカウント"]
 !! div[aria-label="タイムライン: "]
 !! div[aria-label="タイムライン: "] *
@@ -39,8 +39,9 @@ twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="
 !! .css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x
 !! div[aria-live="polite"]
 !! div[aria-label$="の未読項目"]
+!! a[aria-label="認証済み"]
 
-twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,a[aria-label*="調べたいものを検索"],a[aria-label*="調べたいものを検索"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"]
+twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"],a[aria-label="認証済み"]
 
 ! Twitterのもっと見つけるを削除する
 !! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*
