@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 7 days
-! Last modified: 2023-06-13T05:43:00+09:00
+! Last modified: 2023-06-13T05:55:55+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -43,13 +43,10 @@ twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="
 
 twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"],a[aria-label="認証済み"]
 
-! Twitterのもっと見つけるを削除する
-!! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*
-!! div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
+! Twitterの「もっと見つける」・「その他のツイート」を削除する
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//h2[@role="heading"]//span[contains(text(),"もっと見つける")]/ancestor::div[@data-testid="cellInnerDiv"]/following-sibling::*)
+twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
 
-twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))~*,div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(もっと見つける))
-
-! Twitterのその他のツイートを削除する
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//h2[@role="heading"]//span[contains(text(),"その他のツイート")]/ancestor::div[@data-testid="cellInnerDiv"]/following-sibling::*)
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(その他のツイート))
 
