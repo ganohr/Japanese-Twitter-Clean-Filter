@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2023-06-13T21:05:00+09:00
+! Last modified: 2023-06-16T02:22:22+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -17,14 +17,9 @@
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのおすすめユーザーを削除する
-!! div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="])
-!! div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="])
-!! div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="])
-!! div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="])
-!! div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="])
-!! div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
 
-twitter.com#?#div[data-testid="cellInnerDiv"]:has(+div+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(+div a[href^="/i/connect_people?user_id="]),div[data-testid="cellInnerDiv"]:has(a[href^="/i/connect_people?user_id="])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/i/connect_people?user_id=")]/ancestor::div[@data-testid="cellInnerDiv"]/preceding-sibling::div[position()<5])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/i/connect_people?user_id=")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterの検索結果に表示される「ユーザー」を削除する
 
