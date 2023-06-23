@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2023-06-16T02:22:22+09:00
+! Last modified: 2023-06-24T00:50:00+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -55,3 +55,8 @@ twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(/�
 !! 動画プレイヤーをクリックして動画を再生すると「placementTracking」が追加される
 !!! twitter.com#?#:xpath(//div[@data-testid="placementTracking"]/ancestor::div[@data-testid="cellInnerDiv"])
 twitter.com#?#:xpath(//div[@data-testid="placementTracking"]/child::div[not(@data-testid="videoPlayer")]/ancestor::div[@data-testid="cellInnerDiv"])
+
+! プッシュ通知を削除
+!! //div[@data-testid="cellInnerDiv"]//span[contains(text(), "プッシュ通知")]/ancestor::div[@data-testid="cellInnerDiv"]
+
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//span[contains(text(), "プッシュ通知")]/ancestor::div[@data-testid="cellInnerDiv"])
