@@ -15,7 +15,7 @@
 !!! 検索：\]/ancestor
 !!! 置換： or contains(text(), "ここにスパムドメインを入力")]/ancestor
 
-twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to")]/ancestor::div[@data-testid="cellInnerDiv"])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to") or contains(text(), "helpgive.to") or contains(text(), "helpgive.to") or contains(text(), "sokuhou.app.link") or contains(text(), "helpgive.to ")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのおすすめユーザーを削除する
 
