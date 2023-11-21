@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2023-09-02T15:15:00+09:00
+! Last modified: 2023-11-21T11:25:00+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -28,6 +28,7 @@ twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/s
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/search?q=")]//span[contains(text(), "すべて表示")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterからトレンドやスペース他、迷惑要素を削除する
+!! 
 !! div[aria-label="タイムライン: トレンド"]
 !! div[aria-label="タイムライン: トレンド"] *
 !!! a[aria-label*="調べたいものを検索"]
@@ -41,8 +42,12 @@ twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/s
 !! div[aria-live="polite"]
 !! div[aria-label$="の未読項目"]
 !! a[aria-label="認証済み"]
+!! 2023年11月21日
+!! aside[aria-label="おすすめユーザー"]:upward(1)
+!! aside[aria-label="プレミアムにサブスクライブ"]:upward(1)
 
-twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"],a[aria-label="認証済み"]
+! twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"],a[aria-label="認証済み"]
+twitter.com#?#aside[aria-label="おすすめユーザー"]:upward(1),aside[aria-label="プレミアムにサブスクライブ"]:upward(1)
 
 ! Twitterの不要なツイートを削除する
 !! もっと見つける
@@ -63,4 +68,5 @@ twitter.com#?#:xpath(//div[@data-testid="placementTracking"]/child::div[not(@dat
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//span[contains(text(), "プッシュ通知")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのサブスクライブ（プレミアム）の宣伝を削除
-twitter.com##a[href='/i/premium_sign_up']:upward(6)
+! twitter.com##a[href='/i/premium_sign_up']:upward(6)
+twitter.com##a[href='/i/verified-choose']
