@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2023-11-23T02:20:00+09:00
+! Last modified: 2023-11-23T02:35:00+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -16,7 +16,7 @@
 !!! 検索：\]/ancestor
 !!! 置換： or contains(text(), "ここにスパムドメインを入力")]/ancestor
 
-twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to") or contains(text(), "helpgive.to") or contains(text(), "helpgive.to") or contains(text(), "sokuhou.app.link") or contains(text(), "helpgive.to ")] or contains(text(), "shortx.cc")]/ancestor::div[@data-testid="cellInnerDiv"])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to") or contains(text(), "helpgive.to") or contains(text(), "sokuhou.app.link") or contains(text(), "shortx.cc")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのおすすめユーザーを削除する
 
