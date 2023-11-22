@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2023-11-21T11:29:00+09:00
+! Last modified: 2023-11-23T02:20:00+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -11,11 +11,12 @@
 ! ※ 実際にTwitter上でボット的にスパム行為を行っているドメインのみが対象です。
 !! bnc.lt
 !! asahsi.com
-|| fanlink.to
+!! fanlink.to
+!! shortx.cc
 !!! 検索：\]/ancestor
 !!! 置換： or contains(text(), "ここにスパムドメインを入力")]/ancestor
 
-twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to") or contains(text(), "helpgive.to") or contains(text(), "helpgive.to") or contains(text(), "sokuhou.app.link") or contains(text(), "helpgive.to ")]/ancestor::div[@data-testid="cellInnerDiv"])
+twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to") or contains(text(), "helpgive.to") or contains(text(), "helpgive.to") or contains(text(), "sokuhou.app.link") or contains(text(), "helpgive.to ")] or contains(text(), "shortx.cc")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのおすすめユーザーを削除する
 
@@ -45,9 +46,11 @@ twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/s
 !! 2023年11月21日
 !! aside[aria-label="おすすめユーザー"]:upward(1)
 !! aside[aria-label="プレミアムにサブスクライブ"]:upward(1)
+!! 2023年11月23日
+!! span:contains(Xでライブ放送する):upward(4)
 
 twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"],a[aria-label="認証済み"]
-twitter.com#?#aside[aria-label="おすすめユーザー"]:upward(1),aside[aria-label="プレミアムにサブスクライブ"]:upward(1)
+twitter.com#?#aside[aria-label="おすすめユーザー"]:upward(1),aside[aria-label="プレミアムにサブスクライブ"]:upward(1),span:contains(Xでライブ放送する):upward(4)
 
 ! Twitterの不要なツイートを削除する
 !! もっと見つける
