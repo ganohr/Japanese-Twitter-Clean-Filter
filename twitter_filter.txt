@@ -1,7 +1,7 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2023-12-14T08:45:00+09:00
+! Last modified: 2024-01-23T08:30:00+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
@@ -73,4 +73,6 @@ twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//span[contains(text(), "
 ! Twitterのサブスクライブ（プレミアム）の宣伝を削除
 twitter.com##a[href='/i/premium_sign_up']:upward(6)
 twitter.com##a[href='/i/verified-choose']
+twitter.com##a[href="/settings/monetization"]:upward(1)
+twitter.com##a[href="https://tweetdeck.twitter.com"]:upward(1)
 twitter.com##img[src*="subscription"]:upward(7)
