@@ -1,78 +1,61 @@
 ! Title: Japanese Twitter Clean Filter
 ! Description: 日本語のTwitterウェブをクリーンに保ちます
 ! Expires: 3 days
-! Last modified: 2024-01-23T08:30:00+09:00
+! Last modified: 2024-01-25T20:30:00+09:00
 ! License: https://github.com/ganohr/Japanese-Twitter-Clean-Filter/blob/main/LICENSE
 ! Homepage: https://ganohr.net/japanese-twitter-clean-filter/
 ! Forums: https://twitter.com/search?q=%23JTCFilter&src=saved_search_click&f=live
 ! Author: ガノー（ganohr）
 
 ! Twitterからスパムサイトへのリンクを含む全ての投稿を削除する
-! ※ 実際にTwitter上でボット的にスパム行為を行っているドメインのみが対象です。
-!! bnc.lt
-!! asahsi.com
-!! fanlink.to
-!! shortx.cc
-!!! 検索：\]/ancestor
-!!! 置換： or contains(text(), "ここにスパムドメインを入力")]/ancestor
+!! ※ 実際にTwitter上でボット的にスパム行為に使用されたドメインのみが対象です。
+twitter.com#?#a:has-text(bnc.lt):upward(9)
+twitter.com#?#a:has-text(asahsi.com):upward(9)
+twitter.com#?#a:has-text(fanlink.to):upward(9)
+twitter.com#?#a:has-text(helpgive.to):upward(9)
+twitter.com#?#a:has-text(sokuhou.app.link):upward(9)
+twitter.com#?#a:has-text(shortx.cc):upward(9)
+twitter.com#?#a:has-text(yytbe.app.link):upward(9)
 
-twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a//div[@data-testid="card.layoutLarge.detail" or @data-testid="card.layoutSmall.detail"]/div[position()=1]//span[contains(text(), "bnc.lt") or contains(text(), "asahsi.com") or contains(text(), "fanlink.to") or contains(text(), "helpgive.to") or contains(text(), "sokuhou.app.link") or contains(text(), "shortx.cc")]/ancestor::div[@data-testid="cellInnerDiv"])
-
-! Twitterのおすすめユーザーを削除する
+! ポストに紛れ込むおすすめユーザーを削除する
 
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/i/connect_people?user_id=")]/ancestor::div[@data-testid="cellInnerDiv"]/preceding-sibling::div[position()<5])
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/i/connect_people?user_id=")]/ancestor::div[@data-testid="cellInnerDiv"])
 
-! Twitterの検索結果に表示される「ユーザー」を削除する
+! 検索結果に表示される「ユーザー」を削除する
 
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/search?q=")]//span[contains(text(), "すべて表示")]/ancestor::div[@data-testid="cellInnerDiv"]/preceding-sibling::div[position()<5])
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//a[starts-with(@href,"/search?q=")]//span[contains(text(), "すべて表示")]/ancestor::div[@data-testid="cellInnerDiv"])
 
-! Twitterからトレンドやスペース他、迷惑要素を削除する
-!! 
-!! div[aria-label="タイムライン: トレンド"]
-!! div[aria-label="タイムライン: トレンド"] *
-!!! a[aria-label*="調べたいものを検索"]
-!!! a[aria-label*="調べたいものを検索"] *
-!! aside[aria-label="関連性の高いアカウント"]
-!! div[aria-label="タイムライン: "]
-!! div[aria-label="タイムライン: "] *
-!! div[aria-label*="新しいツイートがあります。"] *
-!! .css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x
-!! .css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x
-!! div[aria-live="polite"]
-!! div[aria-label$="の未読項目"]
-!! a[aria-label="認証済み"]
-!! 2023年11月21日
-!! aside[aria-label="おすすめユーザー"]:upward(1)
-!! aside[aria-label="プレミアムにサブスクライブ"]:upward(1)
-!! 2023年11月23日
-!! span:contains(Xでライブ放送する):upward(4)
+! トレンド関連（右サイドバー関連）を削除する
 
-twitter.com#?#div[aria-label="タイムライン: トレンド"],div[aria-label="タイムライン: トレンド"] *,aside[aria-label="関連性の高いアカウント"],div[aria-label="タイムライン: "],div[aria-label="タイムライン: "] *,div[aria-label*="新しいツイートがあります。"] *,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x,.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x,div[aria-live="polite"],div[aria-label$="の未読項目"],a[aria-label="認証済み"]
-twitter.com#?#aside[aria-label="おすすめユーザー"]:upward(1),aside[aria-label="プレミアムにサブスクライブ"]:upward(1),span:contains(Xでライブ放送する):upward(4)
+twitter.com#?#div[aria-label="タイムライン: トレンド"]
+twitter.com#?#div[aria-label="タイムライン: トレンド"] *
+twitter.com#?#aside[aria-label="関連性の高いアカウント"]
+twitter.com#?#div[aria-label="タイムライン: "]
+twitter.com#?#div[aria-label="タイムライン: "] *
+twitter.com#?#div[aria-label*="新しいツイートがあります。"] *
+twitter.com#?#.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1udh08x
+twitter.com#?#.css-1dbjc4n.r-x572qd.r-1d6w8o1.r-1867qdf.r-1phboty.r-rs99b7.r-1ifxtd0.r-1bro5k0.r-1udh08x
+twitter.com#?#div[aria-live="polite"]
+twitter.com#?#div[aria-label$="の未読項目"]
+twitter.com#?#a[aria-label="認証済み"]
+twitter.com#?#span:has-text(Xでライブ放送する):upward(4)
+twitter.com#?#aside[aria-label="おすすめユーザー"]:upward(1)
+twitter.com#?#aside[aria-label="プレミアムにサブスクライブ"]:upward(1)
 
 ! Twitterの不要なツイートを削除する
 !! もっと見つける
-!! その他のツイート
-
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//h2[@role="heading"]//span[contains(text(),"もっと見つける") or contains(text(), "その他のツイート")]/ancestor::div[@data-testid="cellInnerDiv"]/following-sibling::*)
-
+!! その他のツイート
 twitter.com#?#div[data-testid="cellInnerDiv"]:has(h2[role="heading"]:contains(/もっと見つける|その他のツイート/))
 
-! Twitterの広告を削除(AdGuardがDivの残骸を消し忘れるので一応)
-!! 動画プレイヤーをクリックして動画を再生すると「placementTracking」が追加される
-!!! twitter.com#?#:xpath(//div[@data-testid="placementTracking"]/ancestor::div[@data-testid="cellInnerDiv"])
-twitter.com#?#:xpath(//div[@data-testid="placementTracking"]/child::div[not(@data-testid="videoPlayer")]/ancestor::div[@data-testid="cellInnerDiv"])
-
 ! プッシュ通知を削除
-!! //div[@data-testid="cellInnerDiv"]//span[contains(text(), "プッシュ通知")]/ancestor::div[@data-testid="cellInnerDiv"]
-
 twitter.com#?#:xpath(//div[@data-testid="cellInnerDiv"]//span[contains(text(), "プッシュ通知")]/ancestor::div[@data-testid="cellInnerDiv"])
 
 ! Twitterのサブスクライブ（プレミアム）の宣伝を削除
-twitter.com##a[href='/i/premium_sign_up']:upward(6)
-twitter.com##a[href='/i/verified-choose']
-twitter.com##a[href="/settings/monetization"]:upward(1)
-twitter.com##a[href="https://tweetdeck.twitter.com"]:upward(1)
-twitter.com##img[src*="subscription"]:upward(7)
+twitter.com#?#a[href='/i/premium_sign_up']:upward(6)
+twitter.com#?#a[href='/i/verified-choose']
+twitter.com#?#a[href="/settings/monetization"]:upward(1)
+twitter.com#?#a[href="https://tweetdeck.twitter.com"]:upward(1)
+twitter.com#?#img[src*="subscription"]:upward(7)
